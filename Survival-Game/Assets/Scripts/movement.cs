@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
+using UnityEngine.UIElements;
+
 
 public class movement : MonoBehaviour
 {
@@ -18,8 +20,8 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Hinput = Input.GetAxis("Horizontal");
-        Vinput = Input.GetAxis("Vertical");
+      /*  Hinput = Input.GetAxis("Horizontal");
+        Vinput = Input.GetAxis("Vertical");*/
         rb.velocity = new Vector3(Hinput * speed, 0f, Vinput * speed);
 
     }
