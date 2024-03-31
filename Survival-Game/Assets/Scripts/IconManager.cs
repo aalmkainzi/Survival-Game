@@ -17,11 +17,11 @@ public class IconManager : MonoBehaviour
     public Image get_icon(int id)
     {
         if (id == 0) return null;
-        Image ret = Instantiate(icons[id - 1]);
-        ret.sprite = Instantiate(ret.sprite);
-        ret.material = new Material(ret.material);
-        ret.material.color = new Color(ret.material.color.r, ret.material.color.g, ret.material.color.b, ret.material.color.a);
-        return ret;
+        Material temp = new Material(icons[id - 1].material);
+        temp.color = new Color(temp.color.r, temp.color.g, temp.color.b, temp.color.a);
+        Image tempi = icons[id - 1];
+        tempi.material = temp;
+        return tempi;
     }
 }
 
