@@ -23,7 +23,6 @@ public class Cursor_Follow : MonoBehaviour
     }
     public void set_icon(Image ic)
     {
-        Debug.Log("SET CUR IC");
         icon.sprite = ic.sprite;
         icon.enabled = true;
         on = true;
@@ -31,7 +30,6 @@ public class Cursor_Follow : MonoBehaviour
 
     public void unset_icon()
     {
-        Debug.Log("UNSET CUR IC");
         icon.sprite = null;
         icon.enabled = false;
         on = false;

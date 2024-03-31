@@ -60,17 +60,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
 
     {
-        Debug.Log("Attack0");
         if (other.gameObject.name == ("Player"))
         {
-            Debug.Log("Attack43873");
 
             HP.Health-= Damage;
         }
 
         if (other.gameObject.CompareTag("Weapon"))
         {
-            Debug.Log("Attack1");
             eHealth -= wDamage;
         }
 

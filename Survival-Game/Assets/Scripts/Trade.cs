@@ -20,6 +20,7 @@ public class Trade : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T) && Vector3.Distance(player.position, transform.position) < 5) 
         {
+            Debug.Log("REACHED");
             if (!trade_active)
             {
                 trade_manager.start_trade(this);

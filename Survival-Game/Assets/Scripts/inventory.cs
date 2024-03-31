@@ -39,21 +39,18 @@ public class inventory : MonoBehaviour
         {
             if (slot.item != null)
             {
-                Debug.Log("B1");
                 Item temp = slot.item;
                 slot.set_item(held_item);
                 set_held_item(temp);
             }
             else
             {
-                Debug.Log("B2");
                 slot.set_item(held_item);
                 set_held_item(null);
             }
         }
         else if(slot.item != null)
         {
-            Debug.Log("B3");
             set_held_item(slot.item);
             slot.unset_icon();
         }
