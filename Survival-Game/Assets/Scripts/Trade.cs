@@ -13,6 +13,10 @@ public class Trade : MonoBehaviour
     public bool trade_active = false;
     void Start()
     {
+        if(player == null)
+        {
+            player = GameObject.Find("Player").transform;
+        }
     }
 
     // Update is called once per frame

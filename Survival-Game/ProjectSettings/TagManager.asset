@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Enemy
   - Weapon
+  - red2Goal
+  - green1Goal
+  - red1Goal
+  - yellow2Goal
+  - yellow1Goal
+  - green2Goal
+  - Tree
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public float eHealth = 100f;
     public pStatus HP;
     public float Damage;
-    public float wDamage;
     private Transform Player;
     //private float speed;
     //private float dist;
@@ -30,11 +29,11 @@ public class Enemy : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed);
         }*/
 
-       /* if (eHealth <= 0)
-        {
-            Destroy(gameObject);
-        }*/
-
+        /* if (eHealth <= 0)
+         {
+             Destroy(gameObject);
+         }*/
+        
     }
 
     /*public void OnCollisionEnter(Collision collision)
@@ -57,21 +56,12 @@ public class Enemy : MonoBehaviour
 
     }*/
 
-    private void OnTriggerEnter(Collider other)
-
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.name == ("Player"))
+        Debug.Log("HEALTH: " + eHealth);
+        if (other.gameObject.name == "Player")
         {
-
-            HP.Health-= Damage;
+            HP.Health -= Damage;
         }
-
-        if (other.gameObject.CompareTag("Weapon"))
-        {
-            eHealth -= wDamage;
-        }
-
-
-
     }
 }
