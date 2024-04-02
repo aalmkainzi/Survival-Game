@@ -6,7 +6,7 @@ public class Axe : Item
 {
     // Start is called before the first frame update
 
-    SoundManager sound_man;
+    public SoundManager sound_man;
 
     void Start()
     {

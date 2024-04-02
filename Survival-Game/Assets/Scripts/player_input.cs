@@ -7,9 +7,11 @@ public class player_input : MonoBehaviour
 {
     public inventory inventory;
     public InputActionProperty trigger;
+    public InputActionProperty grip;
     float held_trigger = 0;
     public GameObject rightray;
     public GameObject righthand;
+    public Item righthand_item;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,27 +21,28 @@ public class player_input : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float temp = trigger.action.ReadValue<float>();
-
-        if (held_trigger == 0)
+        bool grip_pressed    = grip.action.ReadValue<float>() != 0;
+        bool trigger_pressed = trigger.action.ReadValue<float>() != 0;
+        if (inventory.on && grip_pressed)
         {
-            if (temp != 0)
+            inventory.on = false;
+            inventory.gameObject.SetActive(false);
+            righthand.SetActive(true);
+            rightray.SetActive(false);
+
+            inventory.held_item = righthand_item;
+        }
+        else if(!inventory.on && trigger_pressed)
+        {
+            inventory.on = true;
+            inventory.gameObject.SetActive(true);
+            righthand.SetActive(false);
+            rightray.SetActive(true);
+
+            switch (inventory.held_item)
             {
-                inventory.on = !inventory.on;
-                inventory.gameObject.SetActive(inventory.on);
-                if(inventory.on)
-                {
-                    righthand.SetActive(false);
-                    rightray.SetActive(true);
-                }
-                else
-                {
-                    righthand.SetActive(true);
-                    rightray.SetActive(false);
-                }
+                case Axe: Instantiate(GameObject.Find("Axe_prefab"), righthand.transform.position, Quaternion.identity); break;
             }
         }
-
-        held_trigger = temp;
     }
 }
