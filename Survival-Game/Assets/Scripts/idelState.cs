@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class idelState : StateMachineBehaviour
 {
-     Transform player;
-     float chaseRange = 16;
+    Transform player;
+    float chaseRange = 16;
+    NavMeshAgent agent;
 
-     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        agent = animator.gameObject.GetComponent<NavMeshAgent>();
+        agent.enabled = false;
     }
 
      //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -18,8 +22,7 @@ public class idelState : StateMachineBehaviour
     {
         float distance = Vector3.Distance(player.position, animator.transform.position);
         if(distance < chaseRange) {
-/*            Debug.Log("done");
-*/            animator.SetBool("isChasing", true);
+            animator.SetBool("isChasing", true);
 
         }
         

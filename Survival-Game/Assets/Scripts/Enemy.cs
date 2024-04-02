@@ -56,10 +56,10 @@ public class Enemy : MonoBehaviour
 
     }*/
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HEALTH: " + eHealth);
-        if (other.gameObject.name == "Player")
+        //Debug.Log("HEALTH: " + eHealth);
+        if (other.gameObject.CompareTag("Player"))
         {
             HP.Health -= Damage;
         }

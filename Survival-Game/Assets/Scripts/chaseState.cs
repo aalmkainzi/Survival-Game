@@ -14,6 +14,7 @@ public class chaseState : StateMachineBehaviour
     {
 /*        Debug.Log("A");
 */        agent = animator.GetComponent<NavMeshAgent>();
+        agent.enabled = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent.speed = 3.5f;
        die = animator.gameObject.GetComponent<Enemy>();
@@ -42,6 +43,7 @@ public class chaseState : StateMachineBehaviour
 
         if(die.eHealth <= 0)
         {
+            agent.enabled = false;
             animator.SetBool("isDie", true);
         }
 

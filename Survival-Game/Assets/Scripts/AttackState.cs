@@ -24,7 +24,7 @@ public class AttackState : StateMachineBehaviour
        
         if (die.eHealth <= 0)
         {
-            Debug.Log("Die_attack");
+            //Debug.Log("Die_attack");
             animator.SetBool("isDie", true);
         }
 
