@@ -60,11 +60,11 @@ public class inventory : MonoBehaviour
     {
         if (item == null)
         {
-            cursor_Follow.unset_icon();
+            //cursor_Follow.unset_icon();
         }
         else
         {
-            cursor_Follow.set_icon(icon_manager.get_icon(item.icon_id));
+            //cursor_Follow.set_icon(icon_manager.get_icon(item.icon_id));
         }
         held_item = item;
     }
