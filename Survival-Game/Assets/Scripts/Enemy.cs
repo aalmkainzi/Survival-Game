@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        gameObject.transform.Find("Loot").gameObject.SetActive(false);
     }
 
     // Update is called once per frame

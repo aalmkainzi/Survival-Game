@@ -14,7 +14,35 @@ public class dieState : StateMachineBehaviour
             bc.enabled = false;
         }
 
-        Debug.Log("LEN " + bcs.Length);
+
     }
 
+
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        bool b = AnimatorIsPlaying(stateInfo);
+        
+        if(!b)
+        {
+            Transform t = animator.gameObject.transform;
+            bool found = false;
+            foreach (Transform child in t)
+            {
+                if (!found && child.gameObject.name == "Loot")
+                {
+                    found = true;
+                    child.gameObject.SetActive(true);
+                }
+                else
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
+    bool AnimatorIsPlaying(AnimatorStateInfo stateInfo)
+    {
+        return stateInfo.normalizedTime < 1;
+    }
 }

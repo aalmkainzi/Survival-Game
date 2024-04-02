@@ -12,7 +12,8 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log("WEAPN COL" + Damage);
             sound_man.play_slash();
-            collision.gameObject.GetComponent<Enemy>().eHealth -= Damage;
+            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            e.eHealth -= Damage;
         }
     }
 }
