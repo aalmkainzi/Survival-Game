@@ -11,7 +11,7 @@ public class InventorySlot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        icon_man = gameObject.transform.parent.parent.GetComponent<inventory>().icon_manager;
+        icon_man = GameObject.Find("IconManager").GetComponent<IconManager>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class InventorySlot : MonoBehaviour
     {
         this.item = item;
         Image img = gameObject.transform.Find("Image").gameObject.GetComponent<Image>();
-        img.sprite = icon_man.get_icon(item.icon_id).sprite;
+        img.sprite = icon_man.get_icon(item.id);
         img.enabled = true;
     }
 

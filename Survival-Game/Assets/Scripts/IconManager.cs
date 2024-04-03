@@ -7,20 +7,16 @@ using UnityEngine.UI;
 public class IconManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    Image[] icons;
+    public Sprite[] icons;
 
     void Start()
     {
-        icons = GetComponents<Image>();
     }
 
-    public Image get_icon(int id)
+    public Sprite get_icon(int id)
     {
         if (id == 0) return null;
-        Material temp = new Material(icons[id - 1].material);
-        temp.color = new Color(temp.color.r, temp.color.g, temp.color.b, temp.color.a);
-        Image tempi = icons[id - 1];
-        tempi.material = temp;
+        Sprite tempi = icons[id - 1];
         return tempi;
     }
 }

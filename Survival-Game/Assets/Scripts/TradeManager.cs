@@ -26,7 +26,7 @@ public class TradeManager : MonoBehaviour
 
     public void put_item_in_want(Item item)
     {
-        if(item.icon_id == want_slot.item.icon_id)
+        if(item.id == want_slot.item.id)
         {
             want_slot.item = item;
             Image im = want_slot.transform.Find("Image").GetComponent<Image>();

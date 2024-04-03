@@ -23,7 +23,7 @@ public class Trade_Give_Slot : MonoBehaviour
     public void set_item(Item item)
     {
         this.item = item;
-        img.sprite = icon_man.get_icon(item.icon_id).sprite;
+        img.sprite = icon_man.get_icon(item.id);
         img.enabled = true;
         img.material = new Material(img.material);
         Color tempc = img.material.color;

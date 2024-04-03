@@ -10,7 +10,7 @@ public class Axe : Item
 
     void Start()
     {
-        icon_id = 2;
+        id = 2;
     }
 
     // Update is called once per frame

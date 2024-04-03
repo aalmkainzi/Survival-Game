@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int icon_id;
+    public int id;
     void Start()
     {
         
