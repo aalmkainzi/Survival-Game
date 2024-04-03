@@ -62,7 +62,9 @@ public class player_input : MonoBehaviour
                     3 =>
                         Instantiate(prefabs.transform.Find("Fang").gameObject, rightray.transform.position, rightray.transform.rotation),
                     4 =>
-                        Instantiate(prefabs.transform.Find("Log").gameObject, rightray.transform.position, rightray.transform.rotation)
+                        Instantiate(prefabs.transform.Find("Log").gameObject, rightray.transform.position, rightray.transform.rotation),
+                    5 =>
+                        Instantiate(prefabs.transform.Find("sword").gameObject, rightray.transform.position, rightray.transform.rotation)
                 };
                 newobj.SetActive(true);
                 Destroy(inventory.held_item);

@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 059792965dc6aca48b24cf5b2154da16, type: 2}
     - target: {fileID: 919132149155446097, guid: 9f1bca69d832ee74cb626cdef9b0539b, type: 3}
       propertyPath: m_Name
-      value: axe_prefab
+      value: axe_prefab 1
       objectReference: {fileID: 0}
     - target: {fileID: 3566390031902043909, guid: 9f1bca69d832ee74cb626cdef9b0539b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -171,7 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e403b3de705254f88ad05f7ec010b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon_id: 0
+  id: 0
+  sound_man: {fileID: 0}
 --- !u!114 &9111397738711406079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +325,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  player_input: {fileID: 0}
 --- !u!114 &7511820977699677182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0245331e226179419eaad3cef8950d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  Damage: 10
   sound_man: {fileID: 0}
 --- !u!65 &5948040574146848285
 BoxCollider:
