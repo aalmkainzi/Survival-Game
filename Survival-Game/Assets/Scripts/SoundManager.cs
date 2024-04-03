@@ -7,6 +7,12 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     public AudioSource chop;
     public AudioSource slash;
+    public AudioSource mDie;
+    public AudioSource mHit;
+    public AudioSource bDie;
+    public AudioSource bHit;
+       
+       
 
     void Start()
     {
@@ -18,7 +24,23 @@ public class SoundManager : MonoBehaviour
     {
         
     }
-
+    
+    public void play_bHit()
+    {
+        bHit.Play();
+    }
+    public void play_mDie()
+    {
+        mDie.Play();
+    }
+    public void play_mHit()
+    {
+        mHit.Play();
+    }
+    public void play_bDie()
+    {
+        bDie.Play();
+    }
     public void play_chop()
     {
         chop.Play();

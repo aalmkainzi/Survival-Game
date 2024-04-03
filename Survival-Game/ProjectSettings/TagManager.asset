@@ -13,6 +13,8 @@ TagManager:
   - yellow1Goal
   - green2Goal
   - Tree
+  - Animals
+  - Bandit
   layers:
   - Default
   - TransparentFX

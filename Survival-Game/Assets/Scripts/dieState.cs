@@ -14,6 +14,7 @@ public class dieState : StateMachineBehaviour
             bc.enabled = false;
         }
 
+        animator.gameObject.GetComponent<AudioSource>().enabled=false;
 
     }
 
