@@ -8,7 +8,6 @@ public class player_input : MonoBehaviour
     public inventory inventory;
     public InputActionProperty trigger;
     public InputActionProperty grip;
-    float held_trigger = 0;
     public GameObject rightray;
     public GameObject righthand;
     public Item righthand_item;

@@ -24,7 +24,7 @@ public class Axe : Item
         if(collision.gameObject.CompareTag("Tree"))
         {
             sound_man.play_chop();
-            Tree t = collision.gameObject.GetComponent<Tree>();
+            ChopTree t = collision.gameObject.GetComponent<ChopTree>();
             t.hp -= 1;
             if(t.hp <= 0)
             {
