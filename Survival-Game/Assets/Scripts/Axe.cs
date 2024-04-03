@@ -19,12 +19,33 @@ public class Axe : Item
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Tree"))
         {
             sound_man.play_chop();
-            Destroy(collision.gameObject);
+            Tree t = collision.gameObject.GetComponent<Tree>();
+            t.hp -= 1;
+            if(t.hp <= 0)
+            {
+                GameObject log = collision.gameObject.transform.Find("Log").gameObject;
+                log.SetActive(true);
+                t.GetComponent<MeshRenderer>().enabled = false;
+
+                BoxCollider[] bcs = t.GetComponents<BoxCollider>();
+
+                foreach(BoxCollider box in bcs)
+                {
+                    box.enabled = false;
+                }
+
+                MeshCollider[] mcs = t.GetComponents<MeshCollider>();
+
+                foreach (MeshCollider box in mcs)
+                {
+                    box.enabled = false;
+                }
+            }
         }
     }
 }
