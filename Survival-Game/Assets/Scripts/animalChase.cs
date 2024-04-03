@@ -14,9 +14,9 @@ public class animalChase : StateMachineBehaviour
         /*        Debug.Log("A");
         */
         agent = animator.GetComponent<NavMeshAgent>();
-        agent.enabled = true;
+        //agent.enabled = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = 15f;
+        agent.speed = 2f;
 
     }
 
@@ -35,16 +35,14 @@ public class animalChase : StateMachineBehaviour
 
             agent.SetDestination(animator.transform.position + Dir);
         }
+        if(animator.gameObject.GetComponent<animals>().aHealth <= 0)
+        {
+            Debug.Log("DIED");
+            animator.SetBool("isDie", true);
+        }
         else
         {
             animator.SetBool("isChasing", false);
         }
-
-
-
-
-
-
-
     }
 }

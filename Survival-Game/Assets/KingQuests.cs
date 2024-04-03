@@ -11,10 +11,11 @@ public class KingQuests : MonoBehaviour
     public Item w1;
     public bool w2;
     public Item w3;
+    public GameObject chest;
 
     void Start()
     {
-        
+        chest.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,8 +28,9 @@ public class KingQuests : MonoBehaviour
     {
         if(cur_quest == 0)
         {
-            if(other.gameObject.name.ToLower().StartsWith("meat"))
+            if(other.gameObject.name.ToLower().StartsWith("tuatara"))
             {
+                Destroy(other.gameObject);
                 cur_quest++;
                 quests[cur_quest].Play();
             }
@@ -49,8 +51,10 @@ public class KingQuests : MonoBehaviour
         {
             if(other.gameObject.name.ToLower().StartsWith("fang"))
             {
+                Destroy(other.gameObject);
                 cur_quest++;
                 quests[cur_quest].Play();
+                chest.SetActive(true);
             }
         }
     }

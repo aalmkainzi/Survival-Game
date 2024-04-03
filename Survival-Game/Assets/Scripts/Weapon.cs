@@ -41,12 +41,13 @@ public class Weapon : MonoBehaviour
                      sound_man.play_bDie();
                  }
             }
-             else if (collision.gameObject.CompareTag("Animals"))
+            else if (collision.gameObject.CompareTag("Animals"))
             {
                 Debug.Log("WEAPN COL" + Damage);
-                
+
+                sound_man.play_slash();
                 animals a = collision.gameObject.GetComponent<animals>();
-                // a.aHealth -= Damage;
+                a.aHealth -= Damage;
                  
             }
     }

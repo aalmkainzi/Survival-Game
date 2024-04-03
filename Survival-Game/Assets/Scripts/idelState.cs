@@ -14,7 +14,7 @@ public class idelState : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.gameObject.GetComponent<NavMeshAgent>();
-        agent.enabled = false;
+        //agent.enabled = false;
     }
 
      //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
