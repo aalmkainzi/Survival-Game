@@ -6,6 +6,15 @@ public class Weapon : MonoBehaviour
 {
     public float Damage;
     public SoundManager sound_man;
+
+    private void Start()
+    {
+        if(sound_man == null)
+        {
+            sound_man = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        }
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
