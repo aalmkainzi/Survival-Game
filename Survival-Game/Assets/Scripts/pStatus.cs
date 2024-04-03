@@ -45,7 +45,14 @@ public class pStatus : MonoBehaviour
         {
             Hunger = maxHunger;
         }
-
+        /*
+        if (Health <= 0)
+        {
+            transform.position = transform.position + new vector3(-0.0006477062,0.0027,004024557);
+            Health = maxHealth;
+            Hunger = maxHunger;
+        }
+        */
         Hunger = Hunger - hungerOT * Time.deltaTime;
     }
 
