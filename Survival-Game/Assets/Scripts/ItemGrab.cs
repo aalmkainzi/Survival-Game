@@ -15,7 +15,6 @@ public class ItemGrab : XRGrabInteractable
             player_input = GameObject.Find("InputManager").GetComponent<player_input>();
         }
     }
-    
 
     // Start is called before the first frame update
     protected override void OnSelectEntering(SelectEnterEventArgs interactor)
