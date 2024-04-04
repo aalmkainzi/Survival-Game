@@ -26,15 +26,7 @@ public class KingQuests : MonoBehaviour
 
     private void stop_all_others()
     {
-        for(int i = 0; i < cur_quest; i++)
-        {
-            AudioSource c = quests[i];
-            if(c.isPlaying)
-            {
-                c.Stop();
-            }
-        }
-        for (int i = cur_quest + 1; i < quests.Length; i++)
+        for (int i = 0; i < quests.Length; i++)
         {
             AudioSource c = quests[i];
             if (c.isPlaying)
@@ -53,13 +45,11 @@ public class KingQuests : MonoBehaviour
                 Destroy(other.gameObject);
                 cur_quest++;
                 stop_all_others();
-                //quests[cur_quest].Play();
-                AudioSource.PlayClipAtPoint(quests[cur_quest].clip, transform.position);
+                quests[cur_quest].Play();
             }
             else
             {
-                //quests[cur_quest].Play();
-                AudioSource.PlayClipAtPoint(quests[cur_quest].clip, transform.position);
+                quests[cur_quest].Play();
             }
         }
         else if(cur_quest == 1)
@@ -68,8 +58,7 @@ public class KingQuests : MonoBehaviour
             {
                 cur_quest++;
                 stop_all_others();
-                //quests[cur_quest].Play();
-                AudioSource.PlayClipAtPoint(quests[cur_quest].clip, transform.position);
+                quests[cur_quest].Play();
             }
         }
         else if(cur_quest == 2)
@@ -79,8 +68,7 @@ public class KingQuests : MonoBehaviour
                 Destroy(other.gameObject);
                 cur_quest++;
                 stop_all_others();
-                //quests[cur_quest].Play();
-                AudioSource.PlayClipAtPoint(quests[cur_quest].clip, transform.position);
+                quests[cur_quest].Play();
                 chest.SetActive(true);
             }
         }
